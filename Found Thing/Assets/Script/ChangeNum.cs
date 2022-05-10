@@ -1,27 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeNum : MonoBehaviour
 {
-    public static event  Action<string> ButtonPressed = delegate {  };
+    public static bool isSafeOpened = false;
+    public GameObject HackerApp;
+    public DigitalDisplay DigitalDisplay;
+    public float Timer = 1;
+    public GameObject HackerEndingImage;
+    public GameObject HackerEndingtext;
 
-    private int deviderPosition;
-    private string buttonName, buttonValue;
-
-    private void Start()
+    private void Update()
     {
-        buttonName = gameObject.name;
-        deviderPosition = buttonName.IndexOf("_");
-        buttonValue = buttonName.Substring(0, deviderPosition);
-        
-        gameObject.GetComponent<Button>().onClick.AddListener(ButtonClicked);
-    }
+        if (isSafeOpened)
+        {
+            HackerApp.SetActive(false);
+            DigitalDisplay.Timer = 60f;
+            Timer -= Time.deltaTime;
+            HackerEndingImage.SetActive(true);
+            HackerEndingtext.SetActive(true);
+        }
 
-    private void ButtonClicked()
-    {
-        ButtonPressed(buttonValue);
+        if (Timer <= 0)
+        {
+            Timer = 1;
+            isSafeOpened = false;
+        }
     }
 }
