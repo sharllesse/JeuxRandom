@@ -8,6 +8,8 @@ public class BlueScreenEnding : MonoBehaviour
     public GameObject BlueScreenEndings;
     public GameObject BlueScreenEndingsText;
     public GameObject BlueScreen;
+    public AudioClip blueScreenSound;
+    public AudioSource AudioSource;
 
     private void Update()
     {
@@ -15,6 +17,7 @@ public class BlueScreenEnding : MonoBehaviour
         {
             BlueScreenEndings.SetActive(true);
             BlueScreenEndingsText.SetActive(true);
+            AudioSource.PlayOneShot(blueScreenSound);
         }
     }
 }

@@ -14,6 +14,8 @@ public class DigitalDisplay : MonoBehaviour
     public GameObject HackerScreen;
     public GameObject HackerEndingImage;
     public GameObject HackerEndingtext;
+    public AudioClip blueScreenSound;
+    public AudioSource AudioSource;
 
     private void Update()
     {
@@ -41,6 +43,7 @@ public class DigitalDisplay : MonoBehaviour
             Timer = 60;
             HackerEndingImage.SetActive(true);
             HackerEndingtext.SetActive(true);
+            AudioSource.PlayOneShot(blueScreenSound);
         }
     }
     public void AddDigit(string digit)
