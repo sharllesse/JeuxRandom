@@ -10,15 +10,14 @@ public class BlueScreenEnding : MonoBehaviour
     public GameObject BlueScreen;
     public AudioClip blueScreenSound;
     public AudioSource AudioSource;
-    
-    public float timer = 1f;
-    //public bool timers;
+    public bool isBlueScreen;
 
-    public void Bluescreen()
+    /*public void Bluescreens()
     {
         BlueScreenEndings.SetActive(true);
         BlueScreenEndingsText.SetActive(true);
         AudioSource.PlayOneShot(blueScreenSound);
+        BlueScreen.SetActive(true);
     }
     /*private void Update()
     {
@@ -34,4 +33,9 @@ public class BlueScreenEnding : MonoBehaviour
             AudioSource.PlayOneShot(blueScreenSound);
         }
     }*/
+
+    public void Bluescreens()
+    {
+        isBlueScreen = true;
+    }
 }

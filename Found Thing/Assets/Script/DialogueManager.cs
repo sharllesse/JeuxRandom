@@ -10,6 +10,10 @@ public class DialogueManager : MonoBehaviour
 
     public Text nameText;
     public Text dialogueText;
+    public GameObject GameObject1;
+    public GameObject GameObject2;
+    public GameObject GameObject3;
+    public GameObject GameObject4;
     
     public void Start()
     {
@@ -58,5 +62,9 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("End of conversation");
+        GameObject1.SetActive(true);
+        GameObject2.SetActive(true);
+        GameObject3.SetActive(false);
+        GameObject4.SetActive(true);
     }
 }

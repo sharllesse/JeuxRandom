@@ -6,29 +6,36 @@ using UnityEngine.UI;
 
 public class InputFieldAdresse : MonoBehaviour
 {
-    public InputField inputField;
-    public string myText;
-    public GameObject Video;
+    public GameObject Video1;
     public GameObject Video2;
-    public GameObject RickEnding;
-    public GameObject RickEndingText;
+    public GameObject Video3;
+    public GameObject Video4;
+    public GameObject Video21;
+    public GameObject Video22;
+    public GameObject Video23;
+    public GameObject Video24;
+    public GameObject Video24rick;
+    public GameObject Video24rickending;
+    public GameObject Video24rickendingtext;
 
-    private void Update()
+    public void ClickOnTheVideo()
     {
-        myText = inputField.text;
-        if (myText == "https://www.youtube.com/watch?v=iik25wqIuFo")
-        {
-            Video.SetActive(true);
-            Video2.SetActive(true);
-            RickEnding.SetActive(true);
-            RickEndingText.SetActive(true);
-        }
+        Video1.SetActive(true);
+        Video21.SetActive(true);
+        Video2.SetActive(false);
+        Video22.SetActive(false);
+        Video3.SetActive(false);
+        Video23.SetActive(false);
+        Video4.SetActive(false);
+        Video24.SetActive(false);
+    }
 
-        if (myText == "")
+    public void Update()
+    {
+        if (Video24rick.activeInHierarchy == true)
         {
-            Video.SetActive(false);
-            Video2.SetActive(false);
+            Video24rickending.SetActive(true);
+            Video24rickendingtext.SetActive(true);
         }
-        
     }
 }
